@@ -16,9 +16,9 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
 
   final _pageOptions = [
     Home(),
-   Cart(),
+    Cart(),
     Noti(),
-   Setting()
+    Setting()
   ];
 
   void _selectPage(int index) {
@@ -49,8 +49,13 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
               ),
             ),
             child: BottomNavigationBar(
+              type: BottomNavigationBarType.fixed,
+              selectedFontSize: 12.0,
+              unselectedFontSize: 12.0,
+              showSelectedLabels: false,   // <-- HERE
+              showUnselectedLabels: false, // <-- AND HERE
               onTap: _selectPage,
-              backgroundColor: Theme.of(context).primaryColor,
+              backgroundColor: Colors.white,
               unselectedItemColor: Colors.grey,
               selectedItemColor: Colors.green[900],
               currentIndex:  selectedPage,
@@ -73,7 +78,7 @@ class _BottomBarScreenState extends State<BottomBarScreen> {
                 BottomNavigationBarItem(
                   icon: Icon(Icons.settings),
                   title: Text('Setting'),
-                ),
+                   ),
               ],
             ),
           ),
